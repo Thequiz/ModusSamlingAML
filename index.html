@@ -44,43 +44,42 @@ button {padding:10px 15px; margin-top:10px; background:#22c55e; border:none; bor
 <script>
 const modus = [
 "Målvakter","Kontantintensiva verksamheter","Falska fakturor","Smurfning","Krypto",
-"Bilar","Guld","Internationella överföringar","Spel","Bolagskapning",
+"Bilar","Motoriserad Penningtvätt","Guld","Internationella överföringar","Spel","Bolagskapning",
 "Fiktiva lån","Arbetskraft","Fastigheter","Digitala plattformar","Hybridupplägg"
 ];
 
 modus.forEach((m,i)=>{
- document.write(`<div class='card' onclick='openPage(${i})'>${m}</div>`)
-});
-</script>
-</div>
-</div>
+ const links = [
+"malvakter.html",
+"kontanter.html",
+"fakturor.html",
+"smurfning.html",
+"krypto.html",
+"bilar.html",
+"guld.html",
+"internationella.html",
+"spel.html",
+"bolagskapning.html",
+"lan.html",
+"arbetskraft.html",
+"fastigheter.html",
+"digitala.html",
+"hybrid.html"
+];
 
-<!-- MODUS SIDOR -->
-<script>
 modus.forEach((m,i)=>{
  document.write(`
- <div id='page${i}' class='section container'>
- <h2>${m}</h2>
- <p><b>Beskrivning:</b> Typiskt upplägg där ${m.toLowerCase()} används för att dölja brottsvinster.</p>
- <p><b>Flöde:</b> Placering → Skiktning → Integrering</p>
- <p><b>Aktörer:</b> Gärningsperson, målvakt, möjliggörare</p>
- <p><b>Varningssignaler:</b> Avvikande beteende, ologiska transaktioner, brist på affärslogik</p>
- <p><b>Åtgärd:</b> Fördjupad granskning och rapportering</p>
- <button class='back' onclick='goHome()'>Tillbaka</button>
- </div>
+   <a href="modus/${links[i]}" class="card">
+     ${m}
+   </a>
  `)
 });
-
-function openPage(i){
- document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
- document.getElementById('page'+i).classList.add('active');
-}
-
-function goHome(){
- document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
- document.getElementById('home').classList.add('active');
-}
+});
 </script>
+</div>
+</div>
+
+
 
 </div>
 
